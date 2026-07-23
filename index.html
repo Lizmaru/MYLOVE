@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мы пупсы 💕</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
-    
+    <title>МЫ ПУПСИКИ 💕</title>
+
+    <!-- Підключаємо новий крутий шрифт Hachi Maru Pop -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
 
     <style>
-/* Сучасні системні налаштування для ідеального відображення */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -20,24 +20,25 @@
         body {
             background-color: #161215;
             color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
+            /* Застосовуємо новий шрифт для всього сайту */
+            font-family: 'Hachi Maru Pop', cursive, sans-serif;
             display: flex;
             justify-content: center;
             min-height: 100vh;
             padding: 20px;
             position: relative;
-            overflow-x: hidden; /* Щоб не було горизонтальної прокрутки */
+            overflow-x: hidden;
         }
 
-        /* --- МАГІЯ ФОНУ: ПЛАВАЮЧІ СЕРДЕЧКА --- */
+        /* ПЛАВАЮЧІ СЕРДЕЧКА НА ФОНІ */
         .background-hearts {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Щоб мишка проходила крізь них */
-            z-index: -1; /* Позаду всього контенту */
+            pointer-events: none;
+            z-index: -1;
         }
 
         .bg-heart {
@@ -61,7 +62,6 @@
             }
         }
 
-        /* Налаштування руху для кожного сердечка */
         .bg-heart:nth-child(1) { left: 10%; animation-duration: 18s; animation-delay: 0s; }
         .bg-heart:nth-child(2) { left: 25%; animation-duration: 14s; animation-delay: 2s; }
         .bg-heart:nth-child(3) { left: 38%; animation-duration: 20s; animation-delay: 1s; }
@@ -72,7 +72,6 @@
         .bg-heart:nth-child(8) { left: 5%; animation-duration: 25s; animation-delay: 6s; }
         .bg-heart:nth-child(9) { left: 55%; animation-duration: 15s; animation-delay: 0s; }
         .bg-heart:nth-child(10) { left: 85%; animation-duration: 21s; animation-delay: 3s; }
-        /* --- КІНЕЦЬ ФОНУ --- */
 
         .container {
             width: 100%;
@@ -93,7 +92,6 @@
             animation: pulse 2s infinite;
         }
 
-      
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.1); }
@@ -101,7 +99,7 @@
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 22px;
             color: #ffb3c6;
             margin-bottom: 6px;
             font-weight: 600;
@@ -109,12 +107,10 @@
 
         .subtitle {
             color: #b5a4ab;
-            font-size: 14px;
+            font-size: 13px;
             margin-bottom: 30px;
-            font-weight: 500;
         }
 
-        /* Стрічка фотографій за сучасними стандартами Flexbox */
         .photo-stream {
             display: flex;
             flex-direction: column;
@@ -129,7 +125,6 @@
             overflow: hidden;
             border: 2px solid #ffb3c6;
             box-shadow: 0 6px 20px rgba(255, 179, 198, 0.15);
-            /* Сучасна плавна анімація без JavaScript */
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
         }
 
@@ -153,7 +148,7 @@
             background-color: #2e262b;
             padding: 18px;
             border-radius: 14px;
-            font-size: 14px;
+            font-size: 13px;
             color: #f0e1ea;
             line-height: 1.5;
             border: 1px solid rgba(255, 179, 198, 0.1);
@@ -181,9 +176,8 @@
         <h1>Наши 3 месяца</h1>
         <div class="subtitle">Я люблю тебя</div>
 
-        <!-- Стрічка для 25 фотографій -->
+        <!-- Стрічка з твоїми фотографіями -->
         <div class="photo-stream">
-            
             <div class="photo-box"><img src="photo1.jpg" alt="Фото 1"></div>
             <div class="photo-box"><img src="photo2.jpg" alt="Фото 2"></div>
             <div class="photo-box"><img src="photo3.jpg" alt="Фото 3"></div>
@@ -209,11 +203,10 @@
             <div class="photo-box"><img src="photo23.jpg" alt="Фото 23"></div>
             <div class="photo-box"><img src="photo24.jpg" alt="Фото 24"></div>
             <div class="photo-box"><img src="photo25.jpg" alt="Фото 25"></div>
-
         </div>
 
         <div class="message-box">
-        Рада что мы есть друг у друга
+            Рада что мы есть друг у друга
         </div>
     </div>
 
