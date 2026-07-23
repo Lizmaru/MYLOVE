@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наші 3 місяці 💕</title>
+
+    <!-- Сучасний шрифт із Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Сучасні системні налаштування для ідеального відображення */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #161215;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden; /* Щоб не було горизонтальної прокрутки */
+        }
+
+        /* --- МАГІЯ ФОНУ: ПЛАВАЮЧІ СЕРДЕЧКА --- */
+        .background-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Щоб мишка проходила крізь них */
+            z-index: -1; /* Позаду всього контенту */
+        }
+
+        .bg-heart {
+            position: absolute;
+            bottom: -100px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb3c6'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0;
+            animation: floatUp 15s infinite linear;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(0.5) rotate(0deg);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(-110vh) scale(1.5) rotate(360deg);
+                opacity: 0.35;
+            }
+        }
+
+        /* Налаштування руху для кожного сердечка */
+        .bg-heart:nth-child(1) { left: 10%; animation-duration: 18s; animation-delay: 0s; }
+        .bg-heart:nth-child(2) { left: 25%; animation-duration: 14s; animation-delay: 2s; }
+        .bg-heart:nth-child(3) { left: 38%; animation-duration: 20s; animation-delay: 1s; }
+        .bg-heart:nth-child(4) { left: 50%; animation-duration: 16s; animation-delay: 4s; }
+        .bg-heart:nth-child(5) { left: 65%; animation-duration: 22s; animation-delay: 3s; }
+        .bg-heart:nth-child(6) { left: 78%; animation-duration: 17s; animation-delay: 5s; }
+        .bg-heart:nth-child(7) { left: 90%; animation-duration: 19s; animation-delay: 1s; }
+        .bg-heart:nth-child(8) { left: 5%; animation-duration: 25s; animation-delay: 6s; }
+        .bg-heart:nth-child(9) { left: 55%; animation-duration: 15s; animation-delay: 0s; }
+        .bg-heart:nth-child(10) { left: 85%; animation-duration: 21s; animation-delay: 3s; }
+        /* --- КІНЕЦЬ ФОНУ --- */
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            background-color: #211b1f;
+            padding: 30px 20px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 179, 198, 0.1);
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .heart {
+            font-size: 45px;
+            margin-bottom: 12px;
+            animation: pulse 2s infinite;
+        }
+
+        /* М'яка анімація пульсації для сердечка */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #ffb3c6;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #b5a4ab;
+            font-size: 14px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        /* Стрічка фотографій за сучасними стандартами Flexbox */
+        .photo-stream {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 25px;
+        }
+
+        .photo-box {
+            width: 100%;
+            height: 280px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid #ffb3c6;
+            box-shadow: 0 6px 20px rgba(255, 179, 198, 0.15);
+            /* Сучасна плавна анімація без JavaScript */
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+
+        .photo-box:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(255, 179, 198, 0.35);
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .photo-box:hover img {
+            transform: scale(1.06);
+        }
+
+        .message-box {
+            background-color: #2e262b;
+            padding: 18px;
+            border-radius: 14px;
+            font-size: 14px;
+            color: #f0e1ea;
+            line-height: 1.5;
+            border: 1px solid rgba(255, 179, 198, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ПЛАВАЮЧІ СЕРДЕЧКА НА ФОНІ -->
+    <div class="background-hearts">
+        <div class="bg-heart" style="width: 30px; height: 30px;"></div>
+        <div class="bg-heart" style="width: 20px; height: 20px;"></div>
+        <div class="bg-heart" style="width: 40px; height: 40px;"></div>
+        <div class="bg-heart" style="width: 25px; height: 25px;"></div>
+        <div class="bg-heart" style="width: 35px; height: 35px;"></div>
+        <div class="bg-heart" style="width: 15px; height: 15px;"></div>
+        <div class="bg-heart" style="width: 50px; height: 50px;"></div>
+        <div class="bg-heart" style="width: 28px; height: 28px;"></div>
+        <div class="bg-heart" style="width: 22px; height: 22px;"></div>
+        <div class="bg-heart" style="width: 45px; height: 45px;"></div>
+    </div>
+
+    <div class="container">
+        <div class="heart">💖</div>
+        <h1>Наши 3 месяца</h1>
+        <div class="subtitle">Я люблю тебя</div>
+
+        <!-- Стрічка для 25 фотографій -->
+        <div class="photo-stream">
+            
+            <div class="photo-box"><img src="images/photo1.jpg" alt="Фото 1"></div>
+            <div class="photo-box"><img src="images/photo2.jpg" alt="Фото 2"></div>
+            <div class="photo-box"><img src="images/photo3.jpg" alt="Фото 3"></div>
+            <div class="photo-box"><img src="images/photo4.jpg" alt="Фото 4"></div>
+            <div class="photo-box"><img src="images/photo5.jpg" alt="Фото 5"></div>
+            <div class="photo-box"><img src="images/photo6.jpg" alt="Фото 6"></div>
+            <div class="photo-box"><img src="images/photo7.jpg" alt="Фото 7"></div>
+            <div class="photo-box"><img src="images/photo8.jpg" alt="Фото 8"></div>
+            <div class="photo-box"><img src="images/photo9.jpg" alt="Фото 9"></div>
+            <div class="photo-box"><img src="images/photo10.jpg" alt="Фото 10"></div>
+            <div class="photo-box"><img src="images/photo11.jpg" alt="Фото 11"></div>
+            <div class="photo-box"><img src="images/photo12.jpg" alt="Фото 12"></div>
+            <div class="photo-box"><img src="images/photo13.jpg" alt="Фото 13"></div>
+            <div class="photo-box"><img src="images/photo14.jpg" alt="Фото 14"></div>
+            <div class="photo-box"><img src="images/photo15.jpg" alt="Фото 15"></div>
+            <div class="photo-box"><img src="images/photo16.jpg" alt="Фото 16"></div>
+            <div class="photo-box"><img src="images/photo17.jpg" alt="Фото 17"></div>
+            <div class="photo-box"><img src="images/photo18.jpg" alt="Фото 18"></div>
+            <div class="photo-box"><img src="images/photo19.jpg" alt="Фото 19"></div>
+            <div class="photo-box"><img src="images/photo20.jpg" alt="Фото 20"></div>
+            <div class="photo-box"><img src="images/photo21.jpg" alt="Фото 21"></div>
+            <div class="photo-box"><img src="images/photo22.jpg" alt="Фото 22"></div>
+            <div class="photo-box"><img src="images/photo23.jpg" alt="Фото 23"></div>
+            <div class="photo-box"><img src="images/photo24.jpg" alt="Фото 24"></div>
+            <div class="photo-box"><img src="images/photo25.jpg" alt="Фото 25"></div>
+
+        </div>
+
+        <div class="message-box">
+        Рада что мы есть друг у друга
+        </div>
+    </div>
+
+</body>
+</html>
